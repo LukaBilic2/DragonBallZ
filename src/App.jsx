@@ -1,11 +1,11 @@
 // import React from "react";
-import Background from "./components/background/Background";
+import FormAndCharacter from './components/FormAndCharacter/FormAndCharacter';
 
 function App() {
   return (
     <>
-      <div>
-        <Background></Background>
+      <div className='background'>
+        <FormAndCharacter></FormAndCharacter>
       </div>
     </>
   );

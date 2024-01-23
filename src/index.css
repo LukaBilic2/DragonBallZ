@@ -5,3 +5,47 @@
   padding: 0;
   margin: 0;
 }
+
+body {
+  cursor: url('./images/DragonBall.png'), auto;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(#FF4500,
+      #F85B1A,
+      #FFD7C1,
+      #6fc91a,
+      #386c0d);
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#FF4500,
+      #F85B1A,
+      #FFD7C1,
+      #6fc91a,
+      #386c0d);
+  border-radius: 100vw;
+  border: 2px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+  border: 1px solid whitesmoke;
+}
+
+.background {
+  background-image: url(./images/dragonBallBackground.avif);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}

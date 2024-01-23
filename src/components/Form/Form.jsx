@@ -5,10 +5,9 @@ const Form = ({ onButtonClick, onInputChange, onEnterKeyDown, inputSearch }) => 
   return (
     <div className={styles.mainForm}>
       {/* Input and button for character search */}
-      <label className={styles.mainLabel} htmlFor="character">
+      <label className={styles.mainLabel} id="character">
         Search characters:
       </label>
-      <div className={styles.helperDiv}></div>
       <input
         type="text"
         id="character"
