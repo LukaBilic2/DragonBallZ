@@ -8,7 +8,7 @@
 
 ## Clone the repository:
 
-- git clone https://github.com/your-username/dragonballz.git
+- git clone [https://github.com/your-username/dragonballz.git](https://github.com/LukaBilic2/DragonBallZ.git)
 
 ## Install dependencies:
 
