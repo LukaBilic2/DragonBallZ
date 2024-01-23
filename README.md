@@ -1,8 +1,21 @@
-# React + Vite
+# Dragon Ball Z Character Search
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- This project is a React application built with Vite that utilizes the Dragon Ball Z API to allow users to search and view information about their favorite Dragon Ball Z - characters. The application is designed to provide a smooth and efficient user experience, powered by the React framework and Vite build tool.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- To run the project locally, follow these steps:
+
+## Clone the repository:
+
+- git clone https://github.com/your-username/dragonballz.git
+
+## Install dependencies:
+
+- cd dragonballz
+- npm install
+
+## Run the development server:
+
+- npm run dev
+- This will start the development server, and you can view the application by navigating to http://localhost:3000 in your web browser.
