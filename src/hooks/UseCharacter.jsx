@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const useCharacter = (apiUrl) => {
+const useCharacter = (apiUrl, initialCharacters) => {
   const [characters, setCharacters] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [showCharacters, setShowCharacters] = useState(false);
+  const [showCharacters, setShowCharacters] = useState(initialCharacters ? true : false);
 
   useEffect(() => {
-    // Function to fetch characters data from the API and handle pagination
     const fetchCharacters = async (page = 1) => {
       setLoading(true);
 
@@ -21,13 +20,17 @@ const useCharacter = (apiUrl) => {
       }
     };
 
-    // Trigger the fetchCharacters function when showCharacters state changes or the API URL changes
-    if (showCharacters) {
-      fetchCharacters();
-    }
-  }, [showCharacters, apiUrl]);
+    fetchCharacters();
+  }, [apiUrl]);
 
-  return { characters, loading, showCharacters, setCharacters, setLoading, setShowCharacters };
+  return {
+    characters,
+    loading,
+    showCharacters,
+    setCharacters,
+    setLoading,
+    setShowCharacters,
+  };
 };
 
 export default useCharacter;

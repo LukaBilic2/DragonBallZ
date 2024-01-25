@@ -6,28 +6,34 @@ import GokuPopUp from '../../images/goku.avif';
 
 const FormAndCharacter = () => {
   const apiUrl = 'https://dragonball-api.com/api/characters';
-  const { characters, loading, showCharacters, setShowCharacters } = useCharacter(apiUrl);
+  const localData = localStorage.getItem('characters');
+  const initialCharacters = localData ? JSON.parse(localData) : [];
+
+  const { characters, loading, showCharacters, setShowCharacters } = useCharacter(apiUrl, initialCharacters);
   const [inputSearch, setInputSearch] = useState('');
 
   const handleButtonClick = () => {
-    if (inputSearch.trim() !== '') {
-      setShowCharacters(true);
-    }
+    setShowCharacters(true);
+    localStorage.setItem('characters', JSON.stringify(filteredCharacters));
   };
 
   const handleInputChange = (event) => {
     setInputSearch(event.target.value);
     setShowCharacters(false);
   };
+
   const handleEnterKeyDown = (event) => {
     if (event.key === 'Enter') {
       handleButtonClick();
+      event.preventDefault();
     }
   };
 
-  const filteredCharacters = characters.filter((character) =>
-    character.name.toLowerCase().includes(inputSearch.toLowerCase())
-  );
+  const filteredCharacters =
+    inputSearch.length > 0
+      ? characters.filter((character) => character.name.toLowerCase().includes(inputSearch.toLowerCase()))
+      : initialCharacters;
+
   const changeFontSize = (characters) => {
     return characters.name.length > 10 ? '35px' : '45px';
   };
@@ -45,7 +51,7 @@ const FormAndCharacter = () => {
       ) : (
         <div className={styles.allCharacterDiv}>
           {showCharacters &&
-            (filteredCharacters.length > 0 ? (
+            (filteredCharacters ? (
               filteredCharacters.map((character) => (
                 <div className={styles.characterContainer} key={character.id}>
                   <img className={styles.gokuPop} src={GokuPopUp} alt="Goku" />
