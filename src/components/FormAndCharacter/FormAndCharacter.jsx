@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from './FormAndCharacter.module.css';
 import useCharacter from '../../hooks/UseCharacter.jsx';
 import Form from '../Form/Form.jsx';
-import GokuPopUp from '../../images/goku.avif';
+import GokuPopUp from '../../images/goku.png';
 
 const FormAndCharacter = () => {
   const apiUrl = 'https://dragonball-api.com/api/characters';
