@@ -6,8 +6,23 @@
   margin: 0;
 }
 
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   cursor: url('./images/DragonBall.png'), auto;
+  position: relative;
+}
+
+.redSquare {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  pointer-events: none;
 }
 
 ::-webkit-scrollbar {
@@ -47,5 +62,4 @@ body {
   position: absolute;
   width: 100%;
   min-height: 100%;
-  z-index: -1;
 }
