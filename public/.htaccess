@@ -2,6 +2,7 @@
 
     AddType application/javascript .js
     AddType application/javascript .mjs
+    AddType image/avif .avif
     Options -MultiViews
     RewriteEngine On
     RewriteBase /
